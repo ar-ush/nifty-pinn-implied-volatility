@@ -1,3 +1,0 @@
-Series,MAE (%),RMSE (%),Correlation,R-squared,Beta (IV->RV),Alpha,p-value (beta)
-PINN IV,1.7432,2.8318,0.7654,0.5858,1.4686,-0.0326,0.0023
-Classical IV,1.4955,2.4349,0.8378,0.702,1.4836,-0.0389,0.0003
