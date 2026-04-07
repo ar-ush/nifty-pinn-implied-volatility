@@ -1,0 +1,73 @@
+STEP 4: INFORMATION CONTENT REGRESSIONS
+RV_{t+1} = alpha + beta * IV_t + epsilon
+Nifty 50 ATM Options (2025-2026)
+
+============================================================
+REGRESSION: PINN IV Only
+============================================================
+Dependent variable: RV_(t+1)
+Observations      : 12
+R-squared         : 0.2919
+Adj. R-squared    : 0.2211
+F-statistic       : 3.9753 (p=0.0741)
+AIC               : -44.9285
+Durbin-Watson     : 1.5173
+
+Coefficients (HC3 robust SEs):
+Variable                 Coef   t-stat  p-value 95% CI
+------------------------------------------------------------
+  const                0.0089    0.205   0.8379  [-0.0762, 0.0939]
+  PINN_IV              1.0237    1.994   0.0462**  [0.0174, 2.0299]
+
+Mincer-Zarnowitz Test (H0: α=0, β=1):
+  F-stat : 0.9903
+  p-value: 0.4052
+  Result : Fail to reject H0 (unbiased)
+*** p<0.01  ** p<0.05  * p<0.10
+
+============================================================
+REGRESSION: Classical IV Only
+============================================================
+Dependent variable: RV_(t+1)
+Observations      : 12
+R-squared         : 0.2982
+Adj. R-squared    : 0.2280
+F-statistic       : 5.1052 (p=0.0474)
+AIC               : -45.0346
+Durbin-Watson     : 1.5222
+
+Coefficients (HC3 robust SEs):
+Variable                 Coef   t-stat  p-value 95% CI
+------------------------------------------------------------
+  const                0.0129    0.355   0.7223  [-0.0583, 0.0842]
+  Classical_IV         0.9544    2.259   0.0239**  [0.1265, 1.7823]
+
+Mincer-Zarnowitz Test (H0: α=0, β=1):
+  F-stat : 0.6705
+  p-value: 0.533
+  Result : Fail to reject H0 (unbiased)
+*** p<0.01  ** p<0.05  * p<0.10
+
+============================================================
+REGRESSION: Both IVs (Multiple Regression)
+============================================================
+Dependent variable: RV_(t+1)
+Observations      : 12
+R-squared         : 0.2982
+Adj. R-squared    : 0.1423
+F-statistic       : 2.0136 (p=0.1893)
+AIC               : -43.0353
+Durbin-Watson     : 1.5228
+
+Coefficients (HC3 robust SEs):
+Variable                 Coef   t-stat  p-value 95% CI
+------------------------------------------------------------
+  const                0.0125    0.259   0.7955  [-0.0817, 0.1066]
+  PINN_IV              0.0776    0.024   0.9812  [-6.3925, 6.5477]
+  Classical_IV         0.8837    0.298   0.7660  [-4.9349, 6.7023]
+
+Mincer-Zarnowitz Test (H0: α=0, β=1):
+  F-stat : 0.0483
+  p-value: 0.9531
+  Result : Fail to reject H0 (unbiased)
+*** p<0.01  ** p<0.05  * p<0.10

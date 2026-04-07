@@ -1,0 +1,20 @@
+STEP 5: PREDICTABILITY REGRESSIONS
+Nifty 50 ATM Options (2025-2026)
+
+TABLE 5: IN-SAMPLE REGRESSION RESULTS
+Method              N      R2     Beta   p(beta)   Unbiased
+  MA               12  0.2853   0.5337    0.0055        Yes
+  EWMA             12  0.7126   0.5603    0.0777        Yes
+  GARCH            12  0.1307   0.4293    0.2915        Yes
+  EGARCH            0     N/A      N/A       N/A        N/A
+  Classical IV     12  0.2982   0.9544    0.0239        Yes
+  PINN IV          12  0.2919   1.0237    0.0462        Yes
+
+TABLE 6: OUT-OF-SAMPLE FORECAST ERRORS
+Method                  MSE      MAE      RMSE      MAPE
+  MA                 5.0199   2.0647    2.2405   21.8576
+  EWMA               4.9184   1.7186    2.2177   17.1960
+  GARCH              7.6768   2.7689    2.7707   32.0998
+  EGARCH                N/A      N/A       N/A       N/A
+  Classical IV       3.9437   1.7784    1.9859   19.0573
+  PINN IV            4.6973   1.9817    2.1673   21.7572
